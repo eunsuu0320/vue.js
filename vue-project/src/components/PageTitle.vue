@@ -6,7 +6,7 @@
   <p v-bind:class="{ 'red-font': isOK }">환영합니다.</p>
   <ul>
     <li v-bind:key="i" v-for="(member, i) in members">
-      dlfma: {{ member.name }}, 나이: {{ member.age }}
+      이름: {{ member.name }}, 나이: {{ member.age }}
     </li>
   </ul>
   <slot name="footer"></slot>
@@ -20,6 +20,7 @@ export default {
     };
   },
   props: {
+    // props 상위 컴포넌트에서 하위 컴포넌트로 값 전달
     title: { type: String, default: "페이지 제목" },
     likes: { type: Number, default: 0 },
     isOK: { type: Boolean, default: false },
